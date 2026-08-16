@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+
+    <!-- CSS LINK (IMPORTANT) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>📚 Study Planner</h2>
+
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('tasks')">Tasks</button>
+    <button onclick="showSection('timer')">Pomodoro</button>
+</div>
+
+<div class="main">
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="section active">
+        <h1>Dashboard</h1>
+        <div class="card">Welcome! Keep studying 🚀</div>
+    </section>
+
+    <!-- TASKS -->
+    <section id="tasks" class="section">
+        <h1>Tasks</h1>
+
+        <div class="card">
+            <input id="taskInput" placeholder="Enter task">
+            <button onclick="addTask()">Add</button>
+
+            <ul id="taskList"></ul>
+        </div>
+    </section>
+
+    <!-- TIMER -->
+    <section id="timer" class="section">
+        <h1>Pomodoro Timer</h1>
+
+        <div class="card timer">
+            <h2 id="time">25:00</h2>
+
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+    </section>
+
+</div>
+
+<!-- JS LINK (IMPORTANT - MUST BE LAST BEFORE BODY CLOSE) -->
+<script src="script.js"></script>
+
+</body>
+</html>
