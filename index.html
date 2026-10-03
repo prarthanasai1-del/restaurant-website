@@ -3,59 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Planner</title>
 
-    <!-- CSS LINK (IMPORTANT) -->
+    <title>SaiCalc | Smart Scientific Calculator</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="sidebar">
-    <h2>📚 Study Planner</h2>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
-    <button onclick="showSection('dashboard')">Dashboard</button>
-    <button onclick="showSection('tasks')">Tasks</button>
-    <button onclick="showSection('timer')">Pomodoro</button>
-</div>
+    <main class="app">
 
-<div class="main">
+        <!-- =========================
+             CALCULATOR
+        ========================== -->
 
-    <!-- DASHBOARD -->
-    <section id="dashboard" class="section active">
-        <h1>Dashboard</h1>
-        <div class="card">Welcome! Keep studying 🚀</div>
-    </section>
+        <section class="calculator">
 
-    <!-- TASKS -->
-    <section id="tasks" class="section">
-        <h1>Tasks</h1>
+            <!-- HEADER -->
 
-        <div class="card">
-            <input id="taskInput" placeholder="Enter task">
-            <button onclick="addTask()">Add</button>
+            <header class="header">
 
-            <ul id="taskList"></ul>
-        </div>
-    </section>
+                <div>
+                    <h1>SaiCalc</h1>
+                    <p>Smart Scientific Calculator</p>
+                </div>
 
-    <!-- TIMER -->
-    <section id="timer" class="section">
-        <h1>Pomodoro Timer</h1>
+                <div class="header-controls">
 
-        <div class="card timer">
-            <h2 id="time">25:00</h2>
+                    <button id="angleBtn" class="top-btn">
+                        DEG
+                    </button>
 
-            <button onclick="startTimer()">Start</button>
-            <button onclick="pauseTimer()">Pause</button>
-            <button onclick="resetTimer()">Reset</button>
-        </div>
-    </section>
+                    <button id="scientificBtn" class="top-btn">
+                        SCI
+                    </button>
 
-</div>
+                    <button id="themeBtn" class="top-btn">
+                        ☀
+                    </button>
 
-<!-- JS LINK (IMPORTANT - MUST BE LAST BEFORE BODY CLOSE) -->
-<script src="script.js"></script>
+                </div>
+
+            </header>
+
+
+            <!-- DISPLAY -->
+
+            <div class="display">
+
+                <div class="display-top">
+
+                    <span id="modeIndicator">DEG</span>
+
+                    <button id="copyBtn" class="copy-btn" title="Copy result">
+                        ⧉
+                    </button>
+
+                </div>
+
+                <div id="expression" class="expression">
+                    0
+                </div>
+
+                <div id="result" class="result">
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- SCIENTIFIC PANEL -->
+
+            <div id="scientificPanel" class="scientific-panel">
+
+                <button class="scientific-btn"
+                        data-scientific="sin">
+                    sin
+                </button>
+
+                <button class="scientific-btn"
+                        data-scientific="cos">
+                    cos
+                </button>
+
+                <button class="scientific-btn"
+                        data-scientific="tan">
+                    tan
+                </button>
+
+                <button class="scientific-btn"
+                        data-scientific="sqrt">
+                    √
+                </button>
+
+                <button class="scientific-btn"
+                        data-scientific="square">
+                    x²
+                </button>
+
+                <button class="scientific-btn"
+                        data-scientific="power">
+                    xʸ
+                </button>
+
+                <button class="scientific-btn"
+                        data-value="(">
+                    (
+                </button>
+
+                <button class="scientific-btn"
+                        data-value=")">
+                    )
+                </button>
+
+                <button class="scientific-btn"
+                        data-scientific="pi">
+                    π
+                </button>
+
+                <button class="scientific-btn"
+                        data-scientific="e">
+                    e
+                </button>
+
+            </div>
+
+
+            <!-- MAIN BUTTONS -->
+
+            <div class="buttons">
+
+                <button class="btn function"
+                        data-action="clear">
+                    AC
+                </button>
+
+                <button class="btn function"
+                        data-action="delete">
+                    DEL
+                </button>
+
+                <button class="btn function"
+                        data-action="percentage">
+                    %
+                </button>
+
+                <button class="btn operator"
+                        data-value="/">
+                    ÷
+                </button>
+
+
+                <button class="btn"
+                        data-value="7">
+                    7
+                </button>
+
+                <button class="btn"
+                        data-value="8">
+                    8
+                </button>
+
+                <button class="btn"
+                        data-value="9">
+                    9
+                </button>
+
+                <button class="btn operator"
+                        data-value="*">
+                    ×
+                </button>
+
+
+                <button class="btn"
+                        data-value="4">
+                    4
+                </button>
+
+                <button class="btn"
+                        data-value="5">
+                    5
+                </button>
+
+                <button class="btn"
+                        data-value="6">
+                    6
+                </button>
+
+                <button class="btn operator"
+                        data-value="-">
+                    −
+                </button>
+
+
+                <button class="btn"
+                        data-value="1">
+                    1
+                </button>
+
+                <button class="btn"
+                        data-value="2">
+                    2
+                </button>
+
+                <button class="btn"
+                        data-value="3">
+                    3
+                </button>
+
+                <button class="btn operator"
+                        data-value="+">
+                    +
+                </button>
+
+
+                <button class="btn function"
+                        data-action="sign">
+                    +/−
+                </button>
+
+                <button class="btn"
+                        data-value="0">
+                    0
+                </button>
+
+                <button class="btn"
+                        data-value=".">
+                    .
+                </button>
+
+                <button class="btn equals"
+                        data-action="calculate">
+                    =
+                </button>
+
+            </div>
+
+
+            <!-- KEYBOARD INFO -->
+
+            <div class="keyboard-info">
+                <span>⌨ Keyboard supported</span>
+                <span>Enter = Calculate</span>
+                <span>Esc = Clear</span>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HISTORY
+        ========================== -->
+
+        <aside class="history">
+
+            <div class="history-header">
+
+                <div>
+                    <h2>History</h2>
+                    <p>Your recent calculations</p>
+                </div>
+
+                <button id="clearHistory"
+                        class="clear-history">
+                    Clear
+                </button>
+
+            </div>
+
+            <div id="historyList"
+                 class="history-list">
+
+                <div class="empty-history">
+                    No calculations yet
+                </div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <script src="script.js"></script>
 
 </body>
 </html>
